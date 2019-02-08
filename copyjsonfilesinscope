@@ -1,0 +1,7 @@
+#!/bin/bash
+# must be run in same directory as Slack output files
+file="/path/to/fileyouwanttoreadfrom.txt"
+while IFS= read -r line
+do
+        rsync -R "$line" /path/to/outputfolder/ 
+done <"$file"
